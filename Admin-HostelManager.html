@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hostelmanager</title>
+        <style>
+            .d1 {
+                font-size: 60px;
+                text-align: center;
+                color: black;
+                background-color: antiquewhite;
+                padding: 20px;
+            }
+            ul {
+                list-style-type: none;
+                text-align: center; /* Center the buttons horizontally */
+                padding: 0;
+            }
+
+            .li {
+                display: inline-block;
+                margin: 10px; /* Add some margin between the buttons */
+            }
+
+            button {
+                font-size: 24px; /* Increase the button font size */
+                padding: 10px 20px; /* Increase button padding for a larger size */
+                background-color: #8dd5de; /* Change button background color */
+                color: white; /* Change button text color */
+                border: none; /* Remove button border */
+            }
+            button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+button:hover {
+    background-color: #98d09a; /* Change to your desired color */
+    color: white; /* Change text color on hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  
+  h2,
+  p {
+    color: #658ec6;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  h3 {
+    color: #426696;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  main {
+    min-height: 100vh;
+    background: linear-gradient(
+      to right top,
+      #65dfc9,
+      #6cdbeb
+    ); /* from left to upper right */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+  }
+  
+  .circle1,
+  .circle2 {
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3)
+    );
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle1 {
+    top: 5%;
+    right: 15%;
+  }
+  
+  .circle2 {
+    bottom: 5%;
+    left: 10%;
+  }
+  
+  .user {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .user > img {
+    width: 80px;
+    border-radius: 50%;
+  }
+
+  .b1{
+  display: block;
+  margin-right: 20px;
+  margin: auto;
+  font-size: xx-large;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+.b1:active { 
+transform: scale(0.98); 
+/* Scaling button to 0.98 to its original size */ 
+box-shadow: 3px 2px 22px 1px rgba(80, 75, 75, 0.24); 
+/* Lowering the shadow */ 
+}
+        </style>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="images/glass.svg" />
+        <title>Glass Website</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+    </head>
+    <body>
+        <main>
+            <div class="glass">
+                <div>
+                    <h1 style="text-align: center;">Admin - Hostel Manager</h1>
+                    <hr>
+                </div>
+                <div>
+                    <ul style="text-align: left; list-style: none;text-align: center;margin-top: 100px;">
+                        <li style="display: inline-block; margin-right: 50px;">
+                            <button type="button" class="b1" onclick="issue1()">
+                            Issues at hostel -- > Yet to accept                          
+                            </button>
+                        </li><br><br>
+                        <li style="display: inline-block; margin-right: 50px;">
+                            <button type="button" class="b1" onclick="issue2()">
+                            Issues at hostel -- > accepted                         
+                            </button>
+                        </li><br><br>
+                        <li style="display: inline-block; margin-right: 50px;">
+                            <button type="button" class="b1" onclick="issue3()">
+                            Issues at hostel -- > completed                          
+                            </button>
+                        </li>
+                        <br><br>
+                        <li style="display: inline-block; margin-right: 50px;">
+                            <button type="button" class="b1" onclick="issue4()">
+                            Issues at hostel -- > updation                         
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            </main>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+
+            <script>
+                function issue1(){
+                    window.location.href = 'Admin-Hostel1.php';
+                }
+
+                function issue2(){
+                    window.location.href = 'Admin-Hostel2.php';
+                }
+
+                function issue3(){
+                    window.location.href = 'Admin-Hostel3.php';
+                }
+
+                function issue4(){
+                    window.location.href = 'Admin-update.html';
+                }
+            </script>
+    </body>
+</html>

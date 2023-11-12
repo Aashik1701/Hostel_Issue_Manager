@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  
+  h2,
+  p {
+    color: #658ec6;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  h3 {
+    color: #426696;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  main {
+    min-height: 100vh;
+    background: linear-gradient(
+      to right top,
+      #65dfc9,
+      #6cdbeb
+    ); /* from left to upper right */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .glass {
+    display: flex;
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+  }
+  
+  .circle1,
+  .circle2 {
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3)
+    );
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle1 {
+    top: 5%;
+    right: 15%;
+  }
+  
+  .circle2 {
+    bottom: 5%;
+    left: 10%;
+  }
+  
+  .user {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .user > img {
+    width: 80px;
+    border-radius: 50%;
+  }
+  
+  .div1 {
+    margin: auto;
+    margin-top: 20px;
+    width: 70%;
+    background-color: #70e9d3;
+    opacity: 0.8;
+    text-align: center; /* Center-align the content */
+    padding: 20px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+}
+.dash {width: 200px; /* Set the desired width in pixels */
+height: 30px; /* Set the desired height in pixels */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.b1{
+  display: block;
+  margin-right: 20px;
+  margin: auto;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+.b1:active { 
+transform: scale(0.98); 
+/* Scaling button to 0.98 to its original size */ 
+box-shadow: 3px 2px 22px 1px rgba(80, 75, 75, 0.24); 
+/* Lowering the shadow */ 
+}
+
+.d1{
+  border-radius: 10px;
+  padding: 10px;
+}

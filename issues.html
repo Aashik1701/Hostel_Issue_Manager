@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Issues</title>
+        <style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  
+  h2,
+  p {
+    color: #658ec6;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  h3 {
+    color: #426696;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  main {
+    min-height: 100vh;
+    background: linear-gradient(
+      to right top,
+      #65dfc9,
+      #6cdbeb
+    ); /* from left to upper right */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    text-align: center;
+  }
+  
+  .circle1,
+  .circle2 {
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3)
+    );
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle1 {
+    top: 5%;
+    right: 15%;
+  }
+  
+  .circle2 {
+    bottom: 5%;
+    left: 10%;
+  }
+  
+  .user {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .user > img {
+    width: 80px;
+    border-radius: 50%;
+  }
+
+            .body1 {
+            background-image: url(https://miro.medium.com/v2/resize:fit:1200/1*M5aYSeIfMK3Y-vWrIT9yFw.jpeg);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0%;
+            padding: 20px;
+        }
+        .div1 {
+            margin: auto;
+            margin-top: 20px;
+            width: 70%;
+            background-color: rgb(196, 210, 194);
+            opacity: 0.8;
+            text-align: left; /* Center-align the content */
+            padding: 150px;
+            
+            padding-bottom: 200px;
+            border-radius: 5%;
+            margin-bottom: 20px;
+        }
+
+        .d2{
+            font-size: xx-large;
+            padding: 100px;
+            text-align: center;
+            height: 200px;
+            background-color: #38d2b6;
+            padding-bottom: 200px;
+            
+        }
+        .dash {width: 200px; /* Set the desired width in pixels */
+    height: 30px; /* Set the desired height in pixels */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .b1{
+  display: block;
+  margin-right: 20px;
+  margin: auto;
+  font-size: x-large;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+.b1:active { 
+transform: scale(0.98); 
+/* Scaling button to 0.98 to its original size */ 
+box-shadow: 3px 2px 22px 1px rgba(80, 75, 75, 0.24); 
+/* Lowering the shadow */ 
+}
+        </style>
+    
+    </head>
+    <body>
+        <main>
+            <div class="glass">
+                <div class="d2">
+                    <div style="background-color: #9fe3d7;border-radius: 10px;padding: 20px;"> you wanna complaint any issue <a href="issuesubmit.html">Click here</a></div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <br>
+                <label for="RequestId" style="font-size: xx-large;text-align: left;">Got a Request Id?</label>
+                <br><br>
+                <input id="RequestId" class="dash" placeholder="Enter your Request Id" name="RequestId" type="number">
+                <br><br>
+                <button type="button" style="text-align: center;border-radius: 10px;" onclick="submit()" class="b1">Submit !!</button>           
+                </div>
+        </main>
+        
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+        <script>
+            function submit() {
+            var RequestId = document.getElementById("RequestId").value;
+            
+            if (RequestId.trim() === "") {
+                alert("Please fill out the request id");
+            }
+            else {
+                sendDataToPhp({
+                    RequestId : RequestId
+                });
+            }
+        }
+
+        function sendDataToPhp(dataToSend) {
+            var requestOptions = {
+                method: 'POST',
+                body: JSON.stringify(dataToSend),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            fetch('issues.php', requestOptions)
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data); 
+                    alert(data);
+                    window.location.href = 'HostelManager.html';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        </script>
+    </body>
+    
+</html>

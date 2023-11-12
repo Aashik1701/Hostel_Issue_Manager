@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 500px;"></div>
+    <script>
+
+        var map = L.map('map').setView([12.842535, 80.154009], 17); // [latitude, longitude], zoom level
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define a custom marker icon
+        var customIcon = L.icon({
+            iconUrl: 'custom-marker.png', // Replace with your custom marker icon
+            iconSize: [32, 32], // Set the icon size
+        });
+
+
+        var locations = [
+            { name: "A block", coordinates: [12.844601, 80.152651] },
+            { name: "B block", coordinates: [12.842023, 80.157209] },
+            { name: "C block", coordinates: [12.842963, 80.157646] },
+            { name: "D block", coordinates: [12.843675, 80.152033] },
+            { name: "AB 1", coordinates: [12.843650,80.153361] },
+            { name: "Gym khana", coordinates: [12.843626,80.152617] },
+            { name: "Admin block", coordinates: [12.840647,80.153907] },
+            { name: "Library", coordinates: [12.841020,80.153974] },
+            { name: "Health centre", coordinates: [12.841568,80.156475] },
+            { name: "AB 2", coordinates: [12.842622,80.156383] },
+            { name: "AB 3", coordinates: [12.843651,80.154584] },
+            { name: "PT room", coordinates: [12.840893,80.155474] },
+            { name: "Delta block", coordinates: [12.841132,80.155929] },
+            { name: "MG auditorium", coordinates: [12.839658,80.155060] },
+            { name: "Student parking lot", coordinates: [12.841919,80.153228] },
+        ];
+
+        locations.forEach(function (location) {
+            var marker = L.marker(location.coordinates).addTo(map);
+            marker.bindPopup(location.name);
+        });
+
+    </script>
+</body>
+</html>
